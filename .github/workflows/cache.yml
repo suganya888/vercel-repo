@@ -19,5 +19,10 @@ jobs:
           key: cache-0511f0e
 
       - name: Echo cache hit/miss
-        run: echo "Cache result: ${{ steps.cache.outputs.cache-hit }}"
+        run: |
+          if [ "${{ steps.cache.outputs.cache-hit }}" == "true" ]; then
+            echo "Cache result: hit"
+          else
+            echo "Cache result: miss"
+          fi
         shell: bash
