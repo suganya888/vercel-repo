@@ -20,3 +20,4 @@ jobs:
 
       - name: Echo cache hit/miss
         run: echo "Cache result: ${{ steps.cache.outputs.cache-hit }}"
+        shell: bash
